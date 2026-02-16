@@ -50,23 +50,18 @@ body {
 
 .logo {
     display: flex;
-    flex-direction: column;
-    line-height: 1.2;
+    align-items: center;
 }
 
-.logo h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.logo img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-.logo span {
-    font-size: 0.9rem;
-    color: var(--text-gray);
-    margin-left: 2px;
+.logo img:hover {
+    transform: scale(1.05);
 }
 
 .nav-menu {
@@ -742,7 +737,7 @@ section {
         font-size: 2rem;
     }
 
-    .logo h1 {
-        font-size: 1.5rem;
+    .logo img {
+        height: 45px;
     }
 }
