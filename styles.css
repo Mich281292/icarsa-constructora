@@ -709,20 +709,24 @@ section {
     }
 
     .hero {
-        background: linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.4)),
+        background: linear-gradient(rgba(10, 10, 10, 0.2), rgba(10, 10, 10, 0.3)),
                     url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920') center/cover;
     }
 
     .hero-overlay {
-        background: linear-gradient(135deg, rgba(255, 140, 0, 0.15) 0%, rgba(10, 10, 10, 0.5) 100%);
+        background: linear-gradient(135deg, rgba(255, 140, 0, 0.05) 0%, rgba(10, 10, 10, 0.2) 100%);
     }
 
     .hero-title {
         font-size: 2.5rem;
+        text-shadow: 2px 2px 30px rgba(0, 0, 0, 0.9),
+                     0 0 10px rgba(0, 0, 0, 0.8);
     }
 
     .hero-subtitle {
         font-size: 1.1rem;
+        text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.9),
+                     0 0 10px rgba(0, 0, 0, 0.8);
     }
 
     .projects-grid {
