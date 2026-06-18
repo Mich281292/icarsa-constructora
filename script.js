@@ -15,6 +15,26 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     });
 });
 
+// Hacer clickeables las tarjetas de proyecto
+document.querySelectorAll('.project-card').forEach((card, index) => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => {
+        // El ID del proyecto es su índice + 1 (empezando desde 1)
+        const projectId = index + 1;
+        window.location.href = `project-detail.html?id=${projectId}`;
+    });
+});
+
+// Hacer clickeables las tarjetas de servicio
+document.querySelectorAll('.service-card').forEach((card, index) => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => {
+        // El ID del servicio es su índice + 1 (empezando desde 1)
+        const serviceId = index + 1;
+        window.location.href = `service-detail.html?id=${serviceId}`;
+    });
+});
+
 // Scroll suave
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

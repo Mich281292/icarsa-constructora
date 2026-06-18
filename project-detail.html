@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICARSA Constructora - Detalles del Proyecto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="logo1.png" alt="ICARSA Constructora">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#proyectos">Proyectos</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="index.html#nosotros">Nosotros</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Inicio</a>
+            <span>/</span>
+            <a href="index.html#proyectos">Proyectos</a>
+            <span>/</span>
+            <span id="project-breadcrumb">Detalles del Proyecto</span>
+        </div>
+    </div>
+
+    <!-- Project Detail Section -->
+    <section class="project-detail">
+        <div class="container">
+            <!-- Carrusel de imágenes -->
+            <div class="carousel-section">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Las imágenes se cargarán aquí con JavaScript -->
+                    </div>
+                    
+                    <!-- Controles del carrusel -->
+                    <button class="carousel-button prev" id="prevBtn" aria-label="Imagen anterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-button next" id="nextBtn" aria-label="Imagen siguiente">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Indicadores del carrusel -->
+                <div class="carousel-indicators" id="carouselIndicators">
+                    <!-- Los puntos se crearán dinámicamente -->
+                </div>
+            </div>
+
+            <!-- Información del Proyecto -->
+            <div class="project-info">
+                <div class="project-header">
+                    <h1 id="project-title">Título del Proyecto</h1>
+                    <p id="project-description" class="project-description">Descripción del proyecto</p>
+                </div>
+
+                <div class="project-details-grid">
+                    <div class="details-column">
+                        <h2>Detalles del Proyecto</h2>
+                        <div class="details-box">
+                            <h3>Descripción Completa</h3>
+                            <p id="project-full-description">
+                                Descripción completa del proyecto aquí.
+                            </p>
+                        </div>
+
+                        <div class="details-box">
+                            <h3>Características Principales</h3>
+                            <ul id="project-features" class="features-list">
+                                <li><i class="fas fa-check-circle"></i> Característica 1</li>
+                                <li><i class="fas fa-check-circle"></i> Característica 2</li>
+                                <li><i class="fas fa-check-circle"></i> Característica 3</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="details-column">
+                        <div class="details-box highlight">
+                            <h3>¿Interesado en este proyecto?</h3>
+                            <p>Si deseas conocer más detalles sobre este proyecto o tienes alguna pregunta, no dudes en contactarnos.</p>
+                            <a href="index.html#contacto" class="btn btn-primary">Contactar Ahora</a>
+                        </div>
+
+                        <div class="details-box">
+                            <h3>Otros Proyectos Relacionados</h3>
+                            <div id="related-projects" class="related-projects">
+                                <!-- Los proyectos relacionados se cargarán aquí -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ICARSA Constructora</h3>
+                    <p>En ICARSA destinamos todos nuestros recursos técnicos y humanos para ofrecer a nuestros
+clientes la mayor calidad en sus obras en el menor tiempo posible y a un precio justo.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html#proyectos">Proyectos</a></li>
+                        <li><a href="index.html#servicios">Servicios</a></li>
+                        <li><a href="index.html#nosotros">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociales</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ICARSA Constructora. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/524422291028" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="data.js"></script>
+    <script src="project-detail.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

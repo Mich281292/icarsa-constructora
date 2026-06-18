@@ -766,3 +766,478 @@ section {
         height: 50px;
     }
 }
+
+/* Página de Detalles del Proyecto */
+.breadcrumb {
+    background: var(--dark-bg-3);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 140, 0, 0.1);
+    margin-top: 70px;
+}
+
+.breadcrumb .container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--secondary-color);
+}
+
+.breadcrumb span {
+    color: var(--text-gray);
+}
+
+.breadcrumb span:last-child {
+    color: var(--text-light);
+}
+
+.project-detail {
+    background: var(--dark-bg);
+    padding: 3rem 0;
+    min-height: calc(100vh - 70px);
+}
+
+/* Carrusel */
+.carousel-section {
+    margin-bottom: 4rem;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    background: var(--dark-bg-3);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 140, 0, 0.2);
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide.active {
+    display: flex;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 140, 0, 0.8);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background: var(--primary-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-button.prev {
+    left: 20px;
+}
+
+.carousel-button.next {
+    right: 20px;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 140, 0, 0.4);
+    border: 2px solid rgba(255, 140, 0, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: var(--primary-color);
+    transform: scale(1.3);
+    border-color: var(--primary-color);
+}
+
+.carousel-dot:hover {
+    background: var(--primary-color);
+}
+
+/* Información del Proyecto */
+.project-info {
+    background: var(--dark-bg-2);
+    padding: 3rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 140, 0, 0.1);
+}
+
+.project-header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid rgba(255, 140, 0, 0.2);
+    padding-bottom: 2rem;
+}
+
+.project-header h1 {
+    color: var(--text-light);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.project-details-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+.details-column h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.details-box {
+    background: var(--dark-bg-3);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 140, 0, 0.1);
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.details-box:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 20px rgba(255, 140, 0, 0.1);
+}
+
+.details-box h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.details-box p {
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+.details-box.highlight {
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.15) 0%, rgba(255, 165, 0, 0.1) 100%);
+    border-color: var(--primary-color);
+    text-align: center;
+}
+
+.details-box.highlight a {
+    margin-top: 1rem;
+}
+
+.features-list {
+    list-style: none;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+.features-list i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* Proyectos Relacionados */
+.related-projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.related-project-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--dark-bg-3);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 140, 0, 0.1);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.related-project-link:hover {
+    border-color: var(--primary-color);
+    transform: translateX(10px);
+}
+
+.related-project-link img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.related-project-link h4 {
+    color: var(--text-light);
+    margin: 0;
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Responsive - Project Detail */
+@media (max-width: 768px) {
+    .breadcrumb .container {
+        font-size: 0.9rem;
+    }
+
+    .carousel-container {
+        max-height: 300px;
+    }
+
+    .carousel-track {
+        height: 300px;
+    }
+
+    .carousel-slide {
+        height: 300px;
+    }
+
+    .carousel-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .carousel-button.prev {
+        left: 10px;
+    }
+
+    .carousel-button.next {
+        right: 10px;
+    }
+
+    .project-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .project-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-info {
+        padding: 1.5rem;
+    }
+
+    .details-box {
+        padding: 1.5rem;
+    }
+}
+
+/* Página de Detalles del Servicio */
+.service-detail {
+    background: var(--dark-bg);
+    padding: 3rem 0;
+    min-height: calc(100vh - 70px);
+}
+
+.service-info {
+    background: var(--dark-bg-2);
+    padding: 3rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 140, 0, 0.1);
+}
+
+.service-header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid rgba(255, 140, 0, 0.2);
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.service-icon-large {
+    font-size: 4rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.service-header h1 {
+    color: var(--text-light);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-description {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.service-details-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+.related-services {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.related-service-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background: var(--dark-bg-3);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 140, 0, 0.1);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.related-service-link:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(255, 140, 0, 0.1);
+}
+
+.service-link-icon {
+    font-size: 2rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.related-service-link h4 {
+    color: var(--text-light);
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Responsive - Service Detail */
+@media (max-width: 768px) {
+    .service-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .service-icon-large {
+        font-size: 3rem;
+    }
+
+    .service-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-info {
+        padding: 1.5rem;
+    }
+
+    .related-service-link {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .service-icon-large {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-indicators {
+        gap: 0.5rem;
+    }
+
+    .carousel-dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .related-project-link {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .related-project-link img {
+        width: 100%;
+        height: 150px;
+    }
+}
