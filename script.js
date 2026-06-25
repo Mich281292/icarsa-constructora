@@ -89,9 +89,8 @@ document.querySelectorAll('.project-card, .service-card, .stat-card, .info-card'
 const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
-        contactForm.reset();
+        // Permitir que FormSubmit envíe el formulario
+        // El formulario se enviará automáticamente a FormSubmit
     });
 }
 
