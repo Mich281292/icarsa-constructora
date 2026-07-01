@@ -131,7 +131,8 @@ if (contactForm) {
             }
 
             contactForm.reset();
-            window.location.href = 'index.html?contact=success#inicio';
+            showConfirmation('¡Mensaje enviado correctamente! Gracias por contactarnos.');
+            document.getElementById('inicio')?.scrollIntoView({ behavior: 'smooth' });
         } catch (error) {
             showConfirmation('No pudimos enviar tu mensaje. Inténtalo de nuevo.', true);
             submitButton.disabled = false;
@@ -140,10 +141,6 @@ if (contactForm) {
     });
 }
 
-const urlParams = new URLSearchParams(window.location.search);
-if (urlParams.get('contact') === 'success') {
-    showConfirmation('¡Mensaje enviado correctamente! Gracias por contactarnos.');
-}
 
 // Contador animado para las estadísticas
 const animateCounter = (element, target) => {
