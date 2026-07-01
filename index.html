@@ -29,6 +29,11 @@
         </div>
     </nav>
 
+    <div id="form-confirmation" class="form-confirmation" role="status" aria-live="polite">
+        <i class="fas fa-check-circle"></i>
+        <span>¡Mensaje enviado correctamente! Gracias por contactarnos.</span>
+    </div>
+
     <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="hero-overlay"></div>
@@ -338,12 +343,13 @@ clientes la mayor calidad en sus obras en el menor tiempo posible y a un precio 
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form method="POST" action="https://formsubmit.co/michel.vasquez@icarsaqro.com.mx">
+                    <form id="contactForm" method="POST" action="https://formsubmit.co/michel.vasquez@icarsaqro.com.mx">
                         <input type="text" name="nombre" placeholder="Nombre" required>
                         <input type="email" name="email" placeholder="Email" required>
                         <input type="tel" name="telefono" placeholder="Teléfono">
                         <textarea name="mensaje" placeholder="Mensaje" rows="5" required></textarea>
                         <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="Nuevo mensaje desde la web ICARSA">
                         <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
                     </form>
                 </div>

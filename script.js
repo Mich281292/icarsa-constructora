@@ -87,11 +87,62 @@ document.querySelectorAll('.project-card, .service-card, .stat-card, .info-card'
 
 // Form submission
 const contactForm = document.querySelector('.contact-form form');
+const confirmationMessage = document.getElementById('form-confirmation');
+
+const showConfirmation = (message, isError = false) => {
+    if (!confirmationMessage) return;
+
+    confirmationMessage.querySelector('span').textContent = message;
+    confirmationMessage.classList.toggle('error', isError);
+    confirmationMessage.classList.add('show');
+
+    setTimeout(() => {
+        confirmationMessage.classList.remove('show');
+    }, 4000);
+};
+
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        // Permitir que FormSubmit envíe el formulario
-        // El formulario se enviará automáticamente a FormSubmit
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Enviando...';
+
+        const formData = new FormData(contactForm);
+        const payload = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch('https://formsubmit.co/ajax/michel.vasquez@icarsaqro.com.mx', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    ...payload,
+                    _captcha: 'false'
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error('No se pudo enviar el mensaje');
+            }
+
+            contactForm.reset();
+            window.location.href = 'index.html?contact=success#inicio';
+        } catch (error) {
+            showConfirmation('No pudimos enviar tu mensaje. Inténtalo de nuevo.', true);
+            submitButton.disabled = false;
+            submitButton.textContent = originalText;
+        }
     });
+}
+
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('contact') === 'success') {
+    showConfirmation('¡Mensaje enviado correctamente! Gracias por contactarnos.');
 }
 
 // Contador animado para las estadísticas
